@@ -130,25 +130,26 @@ if (isset($_SESSION['error'])) {
                             </div>
                             
                             <div class="task-actions">
-                                <button onclick="toggleTaskStatus(<?php echo $task['id']; ?>, '<?php echo $task['status']; ?>')" 
-                                        class="btn btn-sm <?php echo $task['status'] === 'completed' ? 'btn-warning' : 'btn-success'; ?>" 
-                                        title="<?php echo $task['status'] === 'completed' ? 'Mark as Pending' : 'Mark as Completed'; ?>">
-                                    <?php echo $task['status'] === 'completed' ? '↶' : '✓'; ?>
-                                </button>
+
                                 <a href="edit_task.php?id=<?php echo $task['id']; ?>" class="btn btn-sm btn-secondary" title="Edit Task">✏️</a>
+
                                 <form method="POST" action="../actions/task_actions.php" style="display: inline;" 
                                       onsubmit="return confirmDelete(<?php echo $task['id']; ?>, '<?php echo sanitize($task['title']); ?>')">
                                     <input type="hidden" name="action" value="delete">
                                     <input type="hidden" name="task_id" value="<?php echo $task['id']; ?>">
                                     <button type="submit" class="btn btn-sm btn-danger" title="Delete Task">🗑️</button>
                                 </form>
+
                             </div>
+
                         </div>
                         
                         <?php if ($task['description']): ?>
+
                             <div class="task-description">
                                 <?php echo nl2br(sanitize($task['description'])); ?>
                             </div>
+
                         <?php endif; ?>
                         
                         <div style="font-size: 0.875rem; color: var(--text-secondary); margin-top: 1rem;">
@@ -157,6 +158,7 @@ if (isset($_SESSION['error'])) {
                                 • Updated: <?php echo formatDate($task['updated_at']); ?>
                             <?php endif; ?>
                         </div>
+
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -165,7 +167,9 @@ if (isset($_SESSION['error'])) {
 </div>
 
 <script>
+
 // Add search functionality with real-time filtering
+
 document.getElementById('search').addEventListener('input', function() {
     const searchTerm = this.value.toLowerCase();
     const tasks = document.querySelectorAll('.task-card');
@@ -181,6 +185,7 @@ document.getElementById('search').addEventListener('input', function() {
         }
     });
 });
+
 </script>
 
 <?php require_once '../includes/footer.php'; ?>

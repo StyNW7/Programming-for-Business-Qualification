@@ -1,6 +1,5 @@
-/* Task Manager CSS - Clean & Elegant Design */
-
 /* CSS Variables for theming */
+
 :root {
     --primary-color: #667eea;
     --primary-dark: #5a67d8;
@@ -29,6 +28,7 @@
 }
 
 /* Reset & Base Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -44,6 +44,7 @@ body {
 }
 
 /* Container */
+
 .container {
     max-width: 1200px;
     margin: 0 auto;

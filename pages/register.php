@@ -2,7 +2,6 @@
 $page_title = 'Register';
 require_once '../includes/functions.php';
 
-// Redirect if already logged in
 if (isLoggedIn()) {
     redirect('home.php');
 }
@@ -21,11 +20,15 @@ if (isset($_SESSION['error'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Task Manager</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style2.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <div class="auth-container">
+
         <div class="auth-card">
+
             <div class="auth-header">
                 <h1 class="auth-title">Create Account</h1>
                 <p class="auth-subtitle">Join us to manage your tasks</p>
@@ -75,5 +78,6 @@ if (isset($_SESSION['error'])) {
     </div>
     
     <script src="../js/validation.js"></script>
+    
 </body>
 </html>

@@ -1,5 +1,3 @@
-// Task Manager JavaScript Validation & Functionality
-
 // Theme Management
 function initTheme() {
     const theme = getCookie('theme') || 'light';
